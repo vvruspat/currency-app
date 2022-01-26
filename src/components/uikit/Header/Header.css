@@ -1,0 +1,6 @@
+.header {
+  padding: var(--padding) var(--padding-big);
+  background: var(--primary-color);
+  color: var(--primary-color-inverted);
+  box-shadow: 0 2px 8px var(--primary-color);
+}

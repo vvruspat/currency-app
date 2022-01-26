@@ -1,0 +1,38 @@
+.button {
+  border: 0 none;
+  padding: var(--padding-form-item);
+  border-radius: var(--radius);
+  font-size: var(--text-font-size);
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.1s ease-in;
+  margin: var(--margin) 0;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 8px var(--primary-color);
+  color: var(--primary-color-inverted);
+}
+
+.secondary-button {
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 8px var(--secondary-color);
+  color: var(--secondary-color-inverted);
+}
+
+.stretched-button {
+  display: block;
+  width: 100%;
+}
+
+.button:active {
+  box-shadow: 0 0 1px;
+  opacity: 0.8;
+  transition: all 0.1s ease-in;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: initial;
+}

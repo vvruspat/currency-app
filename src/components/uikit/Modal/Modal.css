@@ -1,0 +1,24 @@
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  padding: var(--padding-big);
+  border: 1px solid var(--hairline-color);
+  box-shadow: 0 -4px 8px var(--hairline-color);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  background: var(--form-background);
+  transform: translateY(100%);
+  transition: all 0.3s ease-in;
+  box-sizing: border-box;
+}
+
+.modal-show {
+  transform: translateY(0);
+  transition: all 0.3s ease-in;
+}

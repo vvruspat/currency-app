@@ -1,0 +1,7 @@
+.group {
+  padding: var(--padding-big);
+  border: 1px solid var(--hairline-color);
+  box-shadow: 0 4px 8px var(--hairline-color);
+  border-radius: var(--radius);
+  background: var(--form-background);
+}

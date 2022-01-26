@@ -1,0 +1,24 @@
+.input {
+  border: 0 none;
+  background: var(--form-background);
+  padding: var(--padding-form-item);
+  border-radius: var(--radius);
+  font-size: var(--text-font-size);
+  font-weight: 600;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input-align-left {
+  text-align: left;
+}
+
+.input-align-right {
+  text-align: right;
+}
+
+.input-align-center {
+  text-align: center;
+}

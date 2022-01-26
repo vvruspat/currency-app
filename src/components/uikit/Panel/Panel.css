@@ -1,0 +1,11 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: var(--margin-big);
+}
+
+.panel-content {
+  display: block;
+}

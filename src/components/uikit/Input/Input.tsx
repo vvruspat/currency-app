@@ -1,5 +1,22 @@
-type InputProps = HTMLInputElement & {}
+import cn from "classnames";
+import "./Input.css";
 
-export const Input = ({}: InputProps) => {
+type InputProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> & {
+  align?: "left" | "right" | "center";
+};
 
-}
+export const Input = ({
+  align = "left",
+  className,
+  ...inputProps
+}: InputProps) => {
+  return (
+    <input
+      className={cn("input", `input-align-${align}`, className)}
+      {...inputProps}
+    />
+  );
+};
