@@ -1,0 +1,5 @@
+.caption {
+  margin: var(--margin) 0;
+  font-size: var(--caption-font-size);
+  font-weight: 400;
+}

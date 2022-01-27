@@ -1,8 +1,9 @@
 .icon-button {
   border: 0 none;
   padding: var(--padding);
-  width: 24px;
-  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   border-radius: 24px;
   background-color: var(--form-background);
   font-size: var(--text-font-size);
@@ -20,4 +21,12 @@
 .icon-button:disabled {
   opacity: 0.6;
   cursor: initial;
+}
+
+.icon-button-icon {
+  height: 16px;
+}
+
+.icon-button-text {
+  padding: 0 var(--padding);
 }

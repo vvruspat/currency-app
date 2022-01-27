@@ -8,16 +8,20 @@ type ButtonProps = React.DetailedHTMLProps<
   HTMLButtonElement
 > & {
   icon?: ReactNode;
+  width?: number;
+  height?: number;
 };
 
 export const IconButton = ({
   className,
   icon,
+  children,
   ...buttonProps
 }: ButtonProps) => {
   return (
     <button className={cn("icon-button", className)} {...buttonProps}>
-      {icon}
+      <div className="icon-button-icon">{icon}</div>
+      {children && <div className="icon-button-text">{children}</div>}
     </button>
   );
 };

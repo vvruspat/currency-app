@@ -1,0 +1,37 @@
+.select-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: var(--padding-form-item);
+}
+
+.select-option-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding);
+}
+
+.select-option-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.select-option-content-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding);
+  color: var(--primary-text-color);
+  font-size: var(--text-font-size);
+}
+
+.select-option-content-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--padding);
+  color: var(--secondary-text-color);
+  font-size: var(--small-text-font-size);
+}
