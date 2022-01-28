@@ -1,13 +1,11 @@
 import React, { useCallback, useState } from "react";
-import {
-  SelectModal,
-  SelectModalProps,
-} from "../uikit/Select/SelectModal/SelectModal";
 
 export const ModalsContext = React.createContext<{
-  setModal: (modal: ModalsProps | null) => void;
+  setModal: (modal: MODALS | null) => void;
+  modal: MODALS | null;
 }>({
-  setModal: (modal: ModalsProps | null) => {},
+  setModal: (modal: MODALS | null) => {},
+  modal: null,
 });
 
 export enum MODALS {
@@ -16,42 +14,18 @@ export enum MODALS {
   EXCHANGE_SUCCESS_MODAL = "exchange-success-modal",
 }
 
-// TODO: render and start modals from the component where it need
-
-type ModalsProps = {
-  modal: MODALS.SELECT_MODAL;
-  props: SelectModalProps;
-};
-// | { modal: MODALS.ERROR_MODAL; props: /*ErrorModalProps*/ {} }
-// | {
-//     modal: MODALS.EXCHANGE_SUCCESS_MODAL;
-//     props: /*ExchangeSuccessModalProps*/ {};
-//   };
-
 type ModalsRootProps = {};
 
 export const ModalsRoot: React.FC<ModalsRootProps> = ({ children }) => {
-  const [currentModal, setCurrentModal] = useState<ModalsProps | null>(null);
+  const [currentModal, setCurrentModal] = useState<MODALS | null>(null);
 
-  const setModal = useCallback((modal: ModalsProps | null) => {
+  const setModal = useCallback((modal: MODALS | null) => {
     setCurrentModal(modal);
   }, []);
 
   return (
-    <ModalsContext.Provider value={{ setModal }}>
+    <ModalsContext.Provider value={{ setModal, modal: currentModal }}>
       {children}
-      {/* <ErrorModal
-        {...currentModalProps}
-        show={currentModal === MODALS.ERROR_MODAL}
-      /> */}
-      <SelectModal
-        {...currentModal?.props}
-        show={currentModal?.modal === MODALS.SELECT_MODAL}
-      />
-      {/* <ExchangeSuccessModal
-        {...currentModalProps}
-        show={currentModal === MODALS.EXCHANGE_SUCCESS_MODAL}
-      /> */}
     </ModalsContext.Provider>
   );
 };

@@ -13,6 +13,10 @@
   transition: all 0.1s ease-in;
 }
 
+.icon-button.icon-right {
+  flex-direction: row-reverse;
+}
+
 .icon-button:active {
   opacity: 0.8;
   transition: all 0.1s ease-in;

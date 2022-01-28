@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import "./SelectOption.css";
 
 export type SelectOptionProps = {
@@ -8,21 +8,20 @@ export type SelectOptionProps = {
   onClick?: () => void;
 };
 
-export const SelectOption = ({
-  content,
-  icon,
-  description,
-  ...restProps
-}: SelectOptionProps) => {
-  return (
-    <div className="select-option" {...restProps}>
-      {icon && <div className="select-option-icon">{icon}</div>}
-      <div className="select-option-content">
-        <div className="select-option-content-data">{content}</div>
-        {description && (
-          <div className="select-option-content-description">{description}</div>
-        )}
+export const SelectOption = forwardRef<HTMLDivElement, SelectOptionProps>(
+  ({ content, icon, description, ...restProps }: SelectOptionProps, ref) => {
+    return (
+      <div className="select-option" {...restProps} ref={ref}>
+        {icon && <div className="select-option-icon">{icon}</div>}
+        <div className="select-option-content">
+          <div className="select-option-content-data">{content}</div>
+          {description && (
+            <div className="select-option-content-description">
+              {description}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);

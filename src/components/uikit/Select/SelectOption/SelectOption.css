@@ -33,5 +33,5 @@
   justify-content: flex-end;
   padding: var(--padding);
   color: var(--secondary-text-color);
-  font-size: var(--small-text-font-size);
+  font-size: var(--secondary-text-font-size);
 }

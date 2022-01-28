@@ -5,6 +5,7 @@ import { SelectOptionProps } from "./SelectOption/SelectOption";
 import { ReactComponent as Down16Icon } from "./assets/Down16Icon.svg";
 
 import "./Select.css";
+import { SelectModal } from "./SelectModal/SelectModal";
 
 export type SelectorOptionValue = SelectOptionProps;
 
@@ -17,26 +18,26 @@ type SelectorProps = {
   value: SelectorOption;
   options: SelectorOption[];
 
-  onSelect?: (value: SelectorOption) => void;
+  onChoose?: (value: SelectorOption) => void;
 };
 
-export const Select = ({ value, options, onSelect }: SelectorProps) => {
+export const Select = ({ value, ...props }: SelectorProps) => {
   const { setModal } = useContext(ModalsContext);
 
-  const onClose = useCallback(() => {
-    setModal(null);
+  const onIconButtonClick = useCallback(() => {
+    setModal(MODALS.SELECT_MODAL);
   }, [setModal]);
 
-  const onIconButtonClick = useCallback(() => {
-    setModal({
-      modal: MODALS.SELECT_MODAL,
-      props: { options, onSelect, onClose },
-    });
-  }, [setModal, options, onSelect, onClose]);
-
   return (
-    <IconButton icon={Down16Icon} onClick={onIconButtonClick}>
-      {value}
-    </IconButton>
+    <>
+      <IconButton
+        icon={<Down16Icon />}
+        align="right"
+        onClick={onIconButtonClick}
+      >
+        {value.value.content}
+      </IconButton>
+      <SelectModal {...props} nav={MODALS.SELECT_MODAL} />
+    </>
   );
 };
