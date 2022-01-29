@@ -5,6 +5,7 @@ import { ChangeEvent, useCallback, useContext, useState } from "react";
 import FlipMove from "react-flip-move";
 import { SelectOption } from "../SelectOption/SelectOption";
 import { ModalsContext } from "../../../Modals/Modals";
+import "./SelectModal.css";
 
 export type SelectModalProps = ModalProps & {
   options?: SelectorOption[];
@@ -33,6 +34,8 @@ export const SelectModal = ({
       header={
         <Input
           value={searchValue}
+          className="select-modal-filter-input"
+          placeholder="Search"
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setSearchValue(e.target.value)
           }

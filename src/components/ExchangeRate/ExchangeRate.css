@@ -1,0 +1,9 @@
+.exchange-rate {
+  margin: var(--margin-big) 0;
+  color: var(--link-color);
+  font-weight: 600;
+}
+
+.exchange-rate-chart-icon {
+  margin-right: var(--margin);
+}

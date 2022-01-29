@@ -3,9 +3,9 @@ import { IconButton } from "..";
 import { MODALS, ModalsContext } from "../../Modals/Modals";
 import { SelectOptionProps } from "./SelectOption/SelectOption";
 import { ReactComponent as Down16Icon } from "./assets/Down16Icon.svg";
+import { SelectModal } from "./SelectModal/SelectModal";
 
 import "./Select.css";
-import { SelectModal } from "./SelectModal/SelectModal";
 
 export type SelectorOptionValue = SelectOptionProps;
 

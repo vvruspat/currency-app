@@ -33,4 +33,5 @@
 
 .icon-button-text {
   padding: 0 var(--padding);
+  font-weight: 600;
 }

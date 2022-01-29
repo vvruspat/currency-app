@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { forwardRef } from "react";
 import "./Input.css";
 
 type InputProps = React.DetailedHTMLProps<
@@ -8,15 +9,14 @@ type InputProps = React.DetailedHTMLProps<
   align?: "left" | "right" | "center";
 };
 
-export const Input = ({
-  align = "left",
-  className,
-  ...inputProps
-}: InputProps) => {
-  return (
-    <input
-      className={cn("input", `input-align-${align}`, className)}
-      {...inputProps}
-    />
-  );
-};
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ align = "left", className, ...inputProps }: InputProps, ref) => {
+    return (
+      <input
+        className={cn("input", `input-align-${align}`, className)}
+        {...inputProps}
+        ref={ref}
+      />
+    );
+  }
+);

@@ -1,0 +1,22 @@
+.currency-exchange {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.currency-exchange-controlls {
+  flex: 0;
+}
+
+.currency-exchange-direction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
+.currency-exchange-direction-button {
+  border: 2px solid var(--hairline-color);
+}
