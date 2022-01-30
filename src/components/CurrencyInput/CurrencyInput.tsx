@@ -135,7 +135,10 @@ export const CurrencyInput = ({
   }, [amount, direction]);
 
   useEffect(() => {
-    if (amountInputRef.current) {
+    if (
+      amountInputRef.current &&
+      amountInputRef.current === document.activeElement
+    ) {
       const newCaretePosition =
         caretePosition +
         (formatedAmount.length -
@@ -161,6 +164,7 @@ export const CurrencyInput = ({
           onChange={onAmountChange}
           onKeyDown={onAmounKeyDown}
           ref={amountInputRef}
+          autoFocus={false}
         />
       </div>
       <div className="currency-input-info">

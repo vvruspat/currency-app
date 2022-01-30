@@ -98,7 +98,7 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
 
       timerInterval.current = window.setInterval(() => {
         fetchExchange(currencyFrom?.key, currencyTo?.key);
-      }, 30000);
+      }, 10000);
     }
 
     return () => {
@@ -140,9 +140,13 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
       };
     });
 
-    setCurrencyFromOptions(options.filter((option) => option.key !== "EUR"));
-    setCurrencyToOptions(options.filter((option) => option.key !== "USD"));
-  }, [accounts]);
+    setCurrencyFromOptions(
+      options.filter((option) => option.key !== currencyTo?.key)
+    );
+    setCurrencyToOptions(
+      options.filter((option) => option.key !== currencyFrom?.key)
+    );
+  }, [accounts, currencyFrom?.key, currencyTo?.key]);
 
   // This effect updates toAmount when the rates updated
   useEffect(() => {
