@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/currency-app/static/css/main.aa9e0772.css",
-    "main.js": "/currency-app/static/js/main.5f95a4d0.js",
+    "main.js": "/currency-app/static/js/main.483fc7ef.js",
     "static/js/787.ff407bae.chunk.js": "/currency-app/static/js/787.ff407bae.chunk.js",
     "static/media/Cross16Icon.svg": "/currency-app/static/media/Cross16Icon.c134af693f04337521ea3391f0fa8c59.svg",
     "static/media/Check64Icon.svg": "/currency-app/static/media/Check64Icon.b1f5dcfc5a70ce5bc19d8e0d0a0f6fa9.svg",
@@ -9,11 +9,11 @@
     "index.html": "/currency-app/index.html",
     "static/media/Down16Icon.svg": "/currency-app/static/media/Down16Icon.6726dcad48fc47a87c8d5d9e0189146a.svg",
     "main.aa9e0772.css.map": "/currency-app/static/css/main.aa9e0772.css.map",
-    "main.5f95a4d0.js.map": "/currency-app/static/js/main.5f95a4d0.js.map",
+    "main.483fc7ef.js.map": "/currency-app/static/js/main.483fc7ef.js.map",
     "787.ff407bae.chunk.js.map": "/currency-app/static/js/787.ff407bae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa9e0772.css",
-    "static/js/main.5f95a4d0.js"
+    "static/js/main.483fc7ef.js"
   ]
 }
