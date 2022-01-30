@@ -120,20 +120,19 @@ export const CurrencyInput = ({
     onCurrencyChange(currency);
   }, [currency, onCurrencyChange]);
 
+  // Formating amount to currency view
   useEffect(() => {
-    let amountFormated = new Intl.NumberFormat("en-US").format(
+    let amountFormated = new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(
       amount ? (direction === CurrencyDirection.IN ? +amount : -amount) : 0
     );
-
-    if (amountFormated.indexOf(".") === -1) {
-      amountFormated += ".00";
-    } else if (amountFormated.indexOf(".") === amountFormated.length - 2) {
-      amountFormated += "0";
-    }
 
     setFormatedAmount(amountFormated);
   }, [amount, direction]);
 
+  // If input has been focused, this code calculates carete shift
   useEffect(() => {
     if (
       amountInputRef.current &&

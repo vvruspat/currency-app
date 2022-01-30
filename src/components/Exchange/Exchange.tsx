@@ -13,7 +13,7 @@ import {
   CurrencyInput,
 } from "../CurrencyInput/CurrencyInput";
 import { ReactComponent as Down16Icon } from "./assets/Down16Icon.svg";
-import { Button, IconButton, Title } from "../uikit";
+import { Button, Caption, IconButton, Title } from "../uikit";
 import "./Exchange.css";
 import { ExchangeRate } from "../ExchangeRate/ExchangeRate";
 import { useAccounts } from "../../hooks";
@@ -37,14 +37,17 @@ type ExchangeProps = {} & DetailedHTMLProps<
 export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
   const { setModal } = useContext(ModalsContext);
 
-  const [isSell, setIsSell] = useState(false);
+  // Data from Currency inputs (from/to)
   const [fromAmount, setFromAmount] = useState(0);
   const [toAmount, setToAmount] = useState(0);
   const [fromError, setFromError] = useState<string | undefined>();
   const [toError, setToError] = useState<string | undefined>();
   const [fromBalance, setFromBalance] = useState(0);
   const [toBalance, setToBalance] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [isSell, setIsSell] = useState(false); // Sell or buy flag
+  const [isLoading, setIsLoading] = useState(false); // flag for spinner
+
   const {
     fetchAccounts,
     getBalance,
@@ -52,7 +55,7 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
     accountsFetchingState,
     accountsError,
   } = useAccounts();
-  const { fetchExchange, exchangeRate } = useExchange();
+  const { fetchExchange, exchangeRate, exchangeError } = useExchange();
 
   const timerInterval = useRef<number | undefined>();
 
@@ -141,10 +144,10 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
     });
 
     setCurrencyFromOptions(
-      options.filter((option) => option.key !== currencyTo?.key)
+      options.filter((option) => option.key !== (currencyTo?.key ?? "USD"))
     );
     setCurrencyToOptions(
-      options.filter((option) => option.key !== currencyFrom?.key)
+      options.filter((option) => option.key !== (currencyFrom?.key ?? "EUR"))
     );
   }, [accounts, currencyFrom?.key, currencyTo?.key]);
 
@@ -195,12 +198,17 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
                 ? `Sell ${currencyFrom?.key ?? ""}`
                 : `Buy  ${currencyFrom?.key ?? ""}`}
             </Title>
-            {currencyFrom && currencyTo && exchangeRate && (
+            {!exchangeError && currencyFrom && currencyTo && exchangeRate && (
               <ExchangeRate
                 from={currencyFrom?.key}
                 to={currencyTo?.key}
                 rate={exchangeRate}
               />
+            )}
+            {(!!exchangeError || !!accountsError) && (
+              <Caption className="currency-exchange-error">
+                Error: Operation unavailable.
+              </Caption>
             )}
             <div className={cn(className, "currency-exchange-inputs")}>
               <CurrencyInput
@@ -249,6 +257,7 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
                 !!fromError || // Error in "from" field
                 !!toError || // Error in "to" field
                 !!accountsError || // Api error while loading accounts list
+                !!exchangeError || // Currency api unavailable
                 !toAmount || // Empty amount in "to" field
                 !fromAmount || // Empty amount in "from" field
                 isLoading // Loading process
