@@ -7,53 +7,12 @@ import {
   useEffect,
 } from "react";
 import { Balance } from "../Balance/Balance";
+import { BalanceSkeleton } from "../Balance/BalanceSkeleton";
+import { MODALS } from "../Modals/Modals";
 import { Input } from "../uikit";
 import { Select, SelectorOption } from "../uikit/Select";
 import "./CurrencyInput.css";
 import { usePreviousFormatedAmount } from "./utils/usePreviousFormatedAmount";
-
-const options: SelectorOption[] = [
-  {
-    key: "RUB",
-    value: {
-      icon: "₽",
-      description: "Russian rubble",
-      content: "RUB",
-    },
-  },
-  {
-    key: "EUR",
-    value: {
-      icon: "Е",
-      description: "Euro",
-      content: "EUR",
-    },
-  },
-  {
-    key: "USD",
-    value: {
-      icon: "$",
-      description: "US Dollar",
-      content: "USD",
-    },
-  },
-  {
-    key: "GBR",
-    value: {
-      icon: "G",
-      description: "UK",
-      content: "RUB",
-    },
-  },
-  {
-    key: "UAH",
-    value: {
-      icon: "U",
-      description: "Ukranian grivna",
-      content: "UAH",
-    },
-  },
-];
 
 export enum CurrencyDirection {
   IN = "in",
@@ -61,30 +20,47 @@ export enum CurrencyDirection {
 }
 
 export const CurrencyInput = ({
-  availableBalances,
+  options,
+  onCurrencyAmountChange,
+  onCurrencyChange,
+  balance,
+  amount,
+  error,
   direction,
+  modalNav,
 }: {
-  availableBalances?: any; // TODO: change
+  options: SelectorOption[];
+  balance: number;
+  amount: number;
+  error: string | undefined;
+  onCurrencyAmountChange: (amount: number) => void;
+  onCurrencyChange: (option: SelectorOption) => void;
   direction: CurrencyDirection;
+  modalNav: MODALS;
 }) => {
-  const [currency, setCurrency] = useState<SelectorOption>(options[0]);
-  const [amount, setAmount] = useState(0);
+  const [currency, setCurrency] = useState<SelectorOption>(
+    options[0] ?? undefined
+  );
   const [formatedAmount, setFormatedAmount] = useState("0.00");
   const prevFormatedAmount = usePreviousFormatedAmount(formatedAmount);
   const [caretePosition, setCaretePosition] = useState(0);
-  const [error, setError] = useState<string | undefined>("Any kind of error");
   const amountInputRef = useRef<HTMLInputElement>(null);
 
-  const onAmountChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+  const onAmountChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
 
-    // Such replace will not work properly with locales like that 123.456,79 (it's de-DE)
-    // But here I use only en-US locale
-    const cleanedValue = value
-      .replace(/[^0-9.]/g, "")
-      .replace(/([\d]+)(\.)$/, "$1.00");
-    setAmount(Math.abs(parseFloat(Number(cleanedValue).toFixed(2))));
-  }, []);
+      // This replace will not work properly with locales like that 123.456,79 (it's de-DE)
+      // But here I use only en-US locale
+      const cleanedValue = value
+        .replace(/[^0-9.]/g, "")
+        .replace(/([\d]+)(\.)$/, "$1.00");
+      const newAmount = Math.abs(parseFloat(Number(cleanedValue).toFixed(2)));
+
+      onCurrencyAmountChange(newAmount);
+    },
+    [onCurrencyAmountChange]
+  );
 
   const onAmounKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -133,6 +109,10 @@ export const CurrencyInput = ({
   );
 
   useEffect(() => {
+    onCurrencyChange(currency);
+  }, [currency, onCurrencyChange]);
+
+  useEffect(() => {
     let amountFormated = new Intl.NumberFormat("en-US").format(
       amount ? (direction === CurrencyDirection.IN ? +amount : -amount) : 0
     );
@@ -165,6 +145,7 @@ export const CurrencyInput = ({
           options={options}
           value={currency}
           onChoose={(v) => setCurrency(v)}
+          modalNav={modalNav}
         />
         <Input
           value={formatedAmount}
@@ -175,11 +156,15 @@ export const CurrencyInput = ({
         />
       </div>
       <div className="currency-input-info">
-        <Balance
-          balance={56665.76}
-          currency={currency.key}
-          className="currency-input-balance"
-        />
+        {currency ? (
+          <Balance
+            balance={balance}
+            currency={currency.key}
+            className="currency-input-balance"
+          />
+        ) : (
+          <BalanceSkeleton />
+        )}
         {error && <div className="currency-input-error">{error}</div>}
       </div>
     </div>

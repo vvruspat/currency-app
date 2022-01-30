@@ -4,9 +4,10 @@ import "./ExchangeRate.css";
 type ExchangeRateProps = {
   from: string;
   to: string;
+  rate: number;
 };
 
-export const ExchangeRate = ({ from, to }: ExchangeRateProps) => {
+export const ExchangeRate = ({ from, to, rate }: ExchangeRateProps) => {
   return (
     <div className="exchange-rate">
       <Chart16Icon className="exchange-rate-chart-icon" />
@@ -20,7 +21,7 @@ export const ExchangeRate = ({ from, to }: ExchangeRateProps) => {
         currency: to,
         minimumFractionDigits: 2,
         maximumFractionDigits: 5,
-      }).format(1.56765)}
+      }).format(rate)}
     </div>
   );
 };

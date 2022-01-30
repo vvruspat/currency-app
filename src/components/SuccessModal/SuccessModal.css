@@ -1,0 +1,27 @@
+.success-modal {
+  height: 300px;
+}
+
+.success {
+  height: 160px;
+  margin-top: var(--margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.success-icon {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.success-caption {
+  text-align: center;
+}
+
+.success-body {
+  text-align: center;
+  color: var(--primary-color);
+}

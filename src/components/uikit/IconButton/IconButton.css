@@ -2,7 +2,7 @@
   border: 0 none;
   padding: var(--padding);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   border-radius: 24px;
   background-color: var(--form-background);
@@ -11,6 +11,12 @@
   opacity: 1;
   margin: var(--margin) 0;
   transition: all 0.1s ease-in;
+}
+
+.icon-button-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .icon-button.icon-right {

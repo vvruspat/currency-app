@@ -1,7 +1,13 @@
 import { SelectorOption } from "../Select";
 import { Modal, ModalProps } from "../../Modal";
 import { Input } from "../..";
-import { ChangeEvent, useCallback, useContext, useState } from "react";
+import {
+  ChangeEvent,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import FlipMove from "react-flip-move";
 import { SelectOption } from "../SelectOption/SelectOption";
 import { ModalsContext } from "../../../Modals/Modals";
@@ -18,6 +24,7 @@ export const SelectModal = ({
   ...modalProps
 }: SelectModalProps) => {
   const [searchValue, setSearchValue] = useState("");
+  const [optionsList, setOptionsList] = useState(options ?? []);
   const { setModal } = useContext(ModalsContext);
 
   const onSelectOptionClick = useCallback(
@@ -27,6 +34,24 @@ export const SelectModal = ({
     },
     [setModal, onChoose]
   );
+
+  useEffect(() => {
+    if (options) {
+      if (!searchValue) {
+        setOptionsList(options);
+      } else {
+        const filteredOptions = options?.filter(
+          (option) =>
+            option.value.content
+              ?.toString()
+              .toLowerCase()
+              .indexOf(searchValue.toLowerCase()) !== -1
+        );
+
+        setOptionsList(filteredOptions);
+      }
+    }
+  }, [options, searchValue]);
 
   return (
     <Modal
@@ -42,8 +67,13 @@ export const SelectModal = ({
         />
       }
     >
-      <FlipMove duration={750} easing="ease-out">
-        {options?.map((option: SelectorOption) => {
+      <FlipMove
+        duration={350}
+        easing="ease-out"
+        enterAnimation="fade"
+        leaveAnimation="fade"
+      >
+        {optionsList?.map((option: SelectorOption) => {
           return (
             <SelectOption
               onClick={() => onSelectOptionClick(option)}

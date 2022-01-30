@@ -3,7 +3,7 @@ import "./SelectOption.css";
 
 export type SelectOptionProps = {
   icon?: ReactNode;
-  description?: string;
+  description?: ReactNode;
   content: ReactNode;
   onClick?: () => void;
 };

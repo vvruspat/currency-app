@@ -29,8 +29,10 @@ export const IconButton = ({
       )}
       {...buttonProps}
     >
-      <div className="icon-button-icon">{icon}</div>
-      {children && <div className="icon-button-text">{children}</div>}
+      <div className="icon-button-content">
+        <div className="icon-button-icon">{icon}</div>
+        {children && <div className="icon-button-text">{children}</div>}
+      </div>
     </button>
   );
 };

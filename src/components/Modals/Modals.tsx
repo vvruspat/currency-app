@@ -9,7 +9,8 @@ export const ModalsContext = React.createContext<{
 });
 
 export enum MODALS {
-  SELECT_MODAL = "select-modal",
+  SELECT_CURRENCY_FROM_MODAL = "select-currency-from-modal",
+  SELECT_CURRENCY_TO_MODAL = "select-currency-to-modal",
   ERROR_MODAL = "error-modal",
   EXCHANGE_SUCCESS_MODAL = "exchange-success-modal",
 }

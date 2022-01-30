@@ -1,0 +1,33 @@
+.currency-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: var(--secondary-color) no-repeat center center;
+  background-size: cover;
+  border-radius: 48px;
+  border: 2px solid var(--hairline-color);
+}
+
+.currency-icon-EUR {
+  background-image: url("./assets/eur.png");
+}
+
+.currency-icon-USD {
+  background-image: url("./assets/usd.png");
+}
+
+.currency-icon-GBP {
+  background-image: url("./assets/gbp.png");
+}
+
+.currency-icon-JPY {
+  background-image: url("./assets/jpy.png");
+}
+
+.currency-icon-CAD {
+  background-image: url("./assets/cad.png");
+}
+
+.currency-icon-CHF {
+  background-image: url("./assets/chf.png");
+}

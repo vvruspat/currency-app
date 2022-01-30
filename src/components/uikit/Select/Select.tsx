@@ -17,16 +17,17 @@ export type SelectorOption = {
 type SelectorProps = {
   value: SelectorOption;
   options: SelectorOption[];
+  modalNav: MODALS;
 
   onChoose?: (value: SelectorOption) => void;
 };
 
-export const Select = ({ value, ...props }: SelectorProps) => {
+export const Select = ({ value, modalNav, ...props }: SelectorProps) => {
   const { setModal } = useContext(ModalsContext);
 
   const onIconButtonClick = useCallback(() => {
-    setModal(MODALS.SELECT_MODAL);
-  }, [setModal]);
+    setModal(modalNav);
+  }, [modalNav, setModal]);
 
   return (
     <>
@@ -35,9 +36,9 @@ export const Select = ({ value, ...props }: SelectorProps) => {
         align="right"
         onClick={onIconButtonClick}
       >
-        {value.value.content}
+        {value ? value.value.content : <div className="skeleton"></div>}
       </IconButton>
-      <SelectModal {...props} nav={MODALS.SELECT_MODAL} />
+      <SelectModal {...props} nav={modalNav} />
     </>
   );
 };
