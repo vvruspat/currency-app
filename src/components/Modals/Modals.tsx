@@ -13,6 +13,7 @@ export enum MODALS {
   SELECT_CURRENCY_TO_MODAL = "select-currency-to-modal",
   ERROR_MODAL = "error-modal",
   EXCHANGE_SUCCESS_MODAL = "exchange-success-modal",
+  TEST_MODAL = "test-modal",
 }
 
 type ModalsRootProps = {};

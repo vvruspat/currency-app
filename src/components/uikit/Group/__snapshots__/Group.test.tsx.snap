@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Group 1`] = `
+<section
+  class="group"
+  data-testid="test-group"
+>
+  Test Group
+</section>
+`;

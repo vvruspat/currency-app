@@ -25,7 +25,7 @@ const accountsSlice = createSlice({
       state.status = FetchingState.SUCCESS;
       state.accounts = action.payload;
     },
-    accountsFailed(state, action) {
+    accountsFailed(state, action: PayloadAction<string>) {
       state.status = FetchingState.FAILED;
       state.error = new Error(action.payload);
     },

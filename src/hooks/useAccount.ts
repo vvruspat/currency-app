@@ -25,7 +25,7 @@ export const useAccounts = () => {
 
       dispatch(accountsFetched(accounts));
     } catch (e) {
-      dispatch(accountsFailed(e));
+      dispatch(accountsFailed((e as Error).message));
     }
   }, [dispatch]);
 

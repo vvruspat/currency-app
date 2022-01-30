@@ -24,7 +24,7 @@ const exchangeSlice = createSlice({
       state.status = FetchingState.SUCCESS;
       state.exchange = action.payload;
     },
-    exchangeFailed(state, action) {
+    exchangeFailed(state, action: PayloadAction<string>) {
       state.status = FetchingState.FAILED;
       state.error = new Error(action.payload);
     },

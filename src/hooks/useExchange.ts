@@ -28,7 +28,7 @@ export const useExchange = () => {
 
         dispatch(exchangeFetched(exchangeRates[`${from}_${to}`]));
       } catch (e) {
-        dispatch(exchangeFailed(e));
+        dispatch(exchangeFailed((e as Error).message));
       }
     },
     [dispatch]

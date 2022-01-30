@@ -1,0 +1,623 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders select 1`] = `
+<div
+  data-testid="select-test"
+>
+  <button
+    class="icon-button icon-right"
+    data-testid="select-buton"
+  >
+    <div
+      class="icon-button-content"
+    >
+      <div
+        class="icon-button-icon"
+      >
+        <svg>
+          Down16Icon.svg
+        </svg>
+      </div>
+      <div
+        class="icon-button-text"
+      >
+        Test1 content
+      </div>
+    </div>
+  </button>
+  <div
+    class="modal-overlay modal-overlay-hide"
+  />
+  <div
+    class="modal"
+    data-testid="select-modal"
+  >
+    <header
+      class="modal-header"
+    >
+      <div
+        class="modal-header-content"
+      >
+        <div
+          class="caption"
+        >
+          <input
+            class="input input-align-left select-modal-filter-input"
+            data-testid="select-modal-filter-input"
+            placeholder="Search"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="icon-button modal-header-close-button"
+      >
+        <div
+          class="icon-button-content"
+        >
+          <div
+            class="icon-button-icon"
+          >
+            <svg>
+              Cross16Icon.svg
+            </svg>
+          </div>
+          <div
+            class="icon-button-text"
+          >
+            Close
+          </div>
+        </div>
+      </button>
+    </header>
+    <section
+      class="modal-content"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test1-icon"
+            >
+              Test1 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test1 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test1 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test2-icon"
+            >
+              Test2 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test2 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test1 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test3-icon"
+            >
+              Test3 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test3 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test3 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test1-icon"
+            >
+              Test4 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test4 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test4 Description
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`renders select 2`] = `
+<div
+  data-testid="select-test"
+>
+  <button
+    class="icon-button icon-right"
+    data-testid="select-buton"
+  >
+    <div
+      class="icon-button-content"
+    >
+      <div
+        class="icon-button-icon"
+      >
+        <svg>
+          Down16Icon.svg
+        </svg>
+      </div>
+      <div
+        class="icon-button-text"
+      >
+        Test1 content
+      </div>
+    </div>
+  </button>
+  <div
+    class="modal-overlay modal-overlay-show"
+  />
+  <div
+    class="modal modal-show"
+    data-testid="select-modal"
+  >
+    <header
+      class="modal-header"
+    >
+      <div
+        class="modal-header-content"
+      >
+        <div
+          class="caption"
+        >
+          <input
+            class="input input-align-left select-modal-filter-input"
+            data-testid="select-modal-filter-input"
+            placeholder="Search"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="icon-button modal-header-close-button"
+      >
+        <div
+          class="icon-button-content"
+        >
+          <div
+            class="icon-button-icon"
+          >
+            <svg>
+              Cross16Icon.svg
+            </svg>
+          </div>
+          <div
+            class="icon-button-text"
+          >
+            Close
+          </div>
+        </div>
+      </button>
+    </header>
+    <section
+      class="modal-content"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test1-icon"
+            >
+              Test1 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test1 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test1 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test2-icon"
+            >
+              Test2 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test2 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test1 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test3-icon"
+            >
+              Test3 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test3 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test3 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test1-icon"
+            >
+              Test4 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test4 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test4 Description
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`renders select 3`] = `
+<div
+  data-testid="select-test"
+>
+  <button
+    class="icon-button icon-right"
+    data-testid="select-buton"
+  >
+    <div
+      class="icon-button-content"
+    >
+      <div
+        class="icon-button-icon"
+      >
+        <svg>
+          Down16Icon.svg
+        </svg>
+      </div>
+      <div
+        class="icon-button-text"
+      >
+        Test1 content
+      </div>
+    </div>
+  </button>
+  <div
+    class="modal-overlay modal-overlay-show"
+  />
+  <div
+    class="modal modal-show"
+    data-testid="select-modal"
+  >
+    <header
+      class="modal-header"
+    >
+      <div
+        class="modal-header-content"
+      >
+        <div
+          class="caption"
+        >
+          <input
+            class="input input-align-left select-modal-filter-input"
+            data-testid="select-modal-filter-input"
+            placeholder="Search"
+            value="Item4"
+          />
+        </div>
+      </div>
+      <button
+        class="icon-button modal-header-close-button"
+      >
+        <div
+          class="icon-button-content"
+        >
+          <div
+            class="icon-button-icon"
+          >
+            <svg>
+              Cross16Icon.svg
+            </svg>
+          </div>
+          <div
+            class="icon-button-text"
+          >
+            Close
+          </div>
+        </div>
+      </button>
+    </header>
+    <section
+      class="modal-content"
+    >
+      <div
+        style="position: relative;"
+      >
+        <div
+          class="select-option"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; opacity: 1;"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test1-icon"
+            >
+              Test1 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test1 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test1 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; opacity: 1;"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test2-icon"
+            >
+              Test2 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test2 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test1 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; opacity: 1;"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test3-icon"
+            >
+              Test3 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test3 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test3 Description
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="select-option"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; opacity: 1;"
+        >
+          <div
+            class="select-option-icon"
+          >
+            <div
+              data-testid="test1-icon"
+            >
+              Test4 icon element
+            </div>
+          </div>
+          <div
+            class="select-option-content"
+          >
+            <div
+              class="select-option-content-data"
+            >
+              Test4 content
+            </div>
+            <div
+              class="select-option-content-description"
+            >
+              <div
+                class="caption"
+              >
+                Test4 Description
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

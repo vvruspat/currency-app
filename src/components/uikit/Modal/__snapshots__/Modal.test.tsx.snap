@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders modal with header 1`] = `
+<div
+  class="modal"
+  data-testid="test-modal"
+>
+  <header
+    class="modal-header"
+  >
+    <div
+      class="modal-header-content"
+    >
+      <div
+        class="caption"
+      >
+        <div
+          class="title"
+          data-testid="test-modal-header"
+        >
+          Test header
+        </div>
+      </div>
+    </div>
+    <button
+      class="icon-button modal-header-close-button"
+    >
+      <div
+        class="icon-button-content"
+      >
+        <div
+          class="icon-button-icon"
+        >
+          <svg>
+            Cross16Icon.svg
+          </svg>
+        </div>
+        <div
+          class="icon-button-text"
+        >
+          Close
+        </div>
+      </div>
+    </button>
+  </header>
+  <section
+    class="modal-content"
+  />
+</div>
+`;
+
+exports[`renders modal without header 1`] = `
+<div
+  class="modal"
+  data-testid="test-modal"
+>
+  <section
+    class="modal-content"
+  />
+</div>
+`;

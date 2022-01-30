@@ -30,15 +30,16 @@ export const Select = ({ value, modalNav, ...props }: SelectorProps) => {
   }, [modalNav, setModal]);
 
   return (
-    <>
+    <div data-testid="select-test">
       <IconButton
         icon={<Down16Icon />}
         align="right"
         onClick={onIconButtonClick}
+        data-testid="select-buton"
       >
         {value ? value.value.content : <div className="skeleton"></div>}
       </IconButton>
-      <SelectModal {...props} nav={modalNav} />
-    </>
+      <SelectModal data-testid="select-modal" {...props} nav={modalNav} />
+    </div>
   );
 };

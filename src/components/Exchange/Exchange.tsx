@@ -180,7 +180,7 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
   }, [isSell, toAmount, toBalance]);
 
   return (
-    <div className="currency-exchange">
+    <div className="currency-exchange" {...divProps}>
       {isLoading ? (
         <Spinner />
       ) : (
@@ -198,10 +198,7 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
                 rate={exchangeRate}
               />
             )}
-            <div
-              className={cn(className, "currency-exchange-inputs")}
-              {...divProps}
-            >
+            <div className={cn(className, "currency-exchange-inputs")}>
               <CurrencyInput
                 options={currencyFromOptions}
                 direction={

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders panel 1`] = `
+<section
+  class="panel"
+  data-testid="test-panel"
+>
+  <div
+    class="panel-content"
+  />
+</section>
+`;

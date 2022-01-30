@@ -4,7 +4,10 @@ import { Modal } from "../uikit/Modal";
 import { ReactComponent as Check64Icon } from "./assets/Check64Icon.svg";
 import "./SuccessModal.css";
 
-type SuccessModalProps = {
+type SuccessModalProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
   fromCurrency: string;
   toCurrency: string;
   fromAmount: number;
@@ -18,12 +21,14 @@ export const SuccessModal = ({
   fromAmount,
   toAmount,
   locale = "en-US",
+  ...modalProps
 }: SuccessModalProps) => {
   return (
     <Modal
       nav={MODALS.EXCHANGE_SUCCESS_MODAL}
       className="success-modal"
       header={<Title>Success!</Title>}
+      {...modalProps}
     >
       <div className="success">
         <div className="success-icon">

@@ -61,6 +61,7 @@ export const SelectModal = ({
           value={searchValue}
           className="select-modal-filter-input"
           placeholder="Search"
+          data-testid="select-modal-filter-input"
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setSearchValue(e.target.value)
           }

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders input 1`] = `
+<input
+  class="input input-align-left"
+  data-testid="test-input"
+/>
+`;
+
+exports[`renders input 2`] = `
+<input
+  class="input input-align-left"
+  data-testid="test-input"
+/>
+`;

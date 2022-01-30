@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Exchange EUR -> USD 1`] = `
+<div
+  class="exchange-rate"
+  data-testid="test-exchange"
+>
+  <svg
+    class="exchange-rate-chart-icon"
+  >
+    Chart16Icon.svg
+  </svg>
+  €1.00
+   
+  =
+   
+  $1.98568
+</div>
+`;
+
+exports[`renders Exchange USD -> EUR 1`] = `
+<div
+  class="exchange-rate"
+  data-testid="test-exchange"
+>
+  <svg
+    class="exchange-rate-chart-icon"
+  >
+    Chart16Icon.svg
+  </svg>
+  $1.00
+   
+  =
+   
+  €0.98568
+</div>
+`;

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CurrencyIcon 1`] = `
+<div
+  class="currency-icon currency-icon-USD"
+  data-testid="test-currency-icon"
+/>
+`;

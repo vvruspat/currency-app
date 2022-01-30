@@ -5,6 +5,8 @@ import {
   KeyboardEvent,
   useRef,
   useEffect,
+  DetailedHTMLProps,
+  HTMLAttributes,
 } from "react";
 import { Balance } from "../Balance/Balance";
 import { BalanceSkeleton } from "../Balance/BalanceSkeleton";
@@ -19,6 +21,20 @@ export enum CurrencyDirection {
   OUT = "out",
 }
 
+type CurrencyInputProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
+  options: SelectorOption[];
+  balance: number;
+  amount: number;
+  error: string | undefined;
+  onCurrencyAmountChange: (amount: number) => void;
+  onCurrencyChange: (option: SelectorOption) => void;
+  direction: CurrencyDirection;
+  modalNav: MODALS;
+};
+
 export const CurrencyInput = ({
   options,
   onCurrencyAmountChange,
@@ -28,16 +44,8 @@ export const CurrencyInput = ({
   error,
   direction,
   modalNav,
-}: {
-  options: SelectorOption[];
-  balance: number;
-  amount: number;
-  error: string | undefined;
-  onCurrencyAmountChange: (amount: number) => void;
-  onCurrencyChange: (option: SelectorOption) => void;
-  direction: CurrencyDirection;
-  modalNav: MODALS;
-}) => {
+  ...divProps
+}: CurrencyInputProps) => {
   const [currency, setCurrency] = useState<SelectorOption>(
     options[0] ?? undefined
   );
@@ -139,7 +147,7 @@ export const CurrencyInput = ({
   }, [caretePosition, formatedAmount.length, prevFormatedAmount]);
 
   return (
-    <div className="currency-input">
+    <div className="currency-input" {...divProps}>
       <div className="currency-input-controls">
         <Select
           options={options}

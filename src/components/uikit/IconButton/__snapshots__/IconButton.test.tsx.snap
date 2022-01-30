@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders IconButton with icon 1`] = `
+<button
+  class="icon-button"
+  data-testid="test-icon-button"
+>
+  <div
+    class="icon-button-content"
+  >
+    <div
+      class="icon-button-icon"
+    >
+      <div
+        data-testid="test-icon-button-icon"
+      />
+    </div>
+    <div
+      class="icon-button-text"
+    >
+      Test Button
+    </div>
+  </div>
+</button>
+`;
+
+exports[`renders IconButton without icon 1`] = `
+<button
+  class="icon-button"
+  data-testid="test-icon-button"
+>
+  <div
+    class="icon-button-content"
+  >
+    <div
+      class="icon-button-icon"
+    />
+    <div
+      class="icon-button-text"
+    >
+      Test Button
+    </div>
+  </div>
+</button>
+`;

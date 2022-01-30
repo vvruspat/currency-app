@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Exchange USD -> EUR 1`] = `
+<div
+  class="modal success-modal"
+  data-testid="test-exchange"
+>
+  <header
+    class="modal-header"
+  >
+    <div
+      class="modal-header-content"
+    >
+      <div
+        class="caption"
+      >
+        <div
+          class="title"
+        >
+          Success!
+        </div>
+      </div>
+    </div>
+    <button
+      class="icon-button modal-header-close-button"
+    >
+      <div
+        class="icon-button-content"
+      >
+        <div
+          class="icon-button-icon"
+        >
+          <svg>
+            Cross16Icon.svg
+          </svg>
+        </div>
+        <div
+          class="icon-button-text"
+        >
+          Close
+        </div>
+      </div>
+    </button>
+  </header>
+  <section
+    class="modal-content"
+  >
+    <div
+      class="success"
+    >
+      <div
+        class="success-icon"
+      >
+        <svg>
+          Check64Icon.svg
+        </svg>
+      </div>
+      <div
+        class="caption success-caption"
+      >
+        You exchange
+      </div>
+      <div
+        class="title success-body"
+      >
+        $456.65
+         
+        to
+         
+        £876.45
+      </div>
+    </div>
+  </section>
+</div>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders balance EUR 1`] = `
+<div
+  data-testid="test-balance"
+>
+  Balance:
+   
+  €128,734.56
+</div>
+`;
+
+exports[`renders balance GBP 1`] = `
+<div
+  data-testid="test-balance"
+>
+  Balance:
+   
+  £1,287.00
+</div>
+`;
+
+exports[`renders balance USD 1`] = `
+<div
+  data-testid="test-balance"
+>
+  Balance:
+   
+  $1,234.56
+</div>
+`;

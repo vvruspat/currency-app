@@ -1,12 +1,18 @@
 import cn from "classnames";
 import "./CurrencyIcon.css";
 
-type CurrencyIconProps = {
+type CurrencyIconProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
   currency: string;
 };
 
-export const CurrencyIcon = ({ currency }: CurrencyIconProps) => {
+export const CurrencyIcon = ({ currency, ...divProps }: CurrencyIconProps) => {
   return (
-    <div className={cn("currency-icon", `currency-icon-${currency}`)}></div>
+    <div
+      className={cn("currency-icon", `currency-icon-${currency}`)}
+      {...divProps}
+    ></div>
   );
 };

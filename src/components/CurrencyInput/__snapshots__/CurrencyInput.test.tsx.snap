@@ -1,0 +1,546 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CurrencyInput error out 1`] = `
+<div
+  class="currency-input"
+  data-testid="test-currency-input"
+>
+  <div
+    class="currency-input-controls"
+  >
+    <div
+      data-testid="select-test"
+    >
+      <button
+        class="icon-button icon-right"
+        data-testid="select-buton"
+      >
+        <div
+          class="icon-button-content"
+        >
+          <div
+            class="icon-button-icon"
+          >
+            <svg>
+              Down16Icon.svg
+            </svg>
+          </div>
+          <div
+            class="icon-button-text"
+          >
+            <div>
+              Balance:
+               
+              $5,676.56
+            </div>
+          </div>
+        </div>
+      </button>
+      <div
+        class="modal-overlay modal-overlay-hide"
+      />
+      <div
+        class="modal"
+        data-testid="select-modal"
+      >
+        <header
+          class="modal-header"
+        >
+          <div
+            class="modal-header-content"
+          >
+            <div
+              class="caption"
+            >
+              <input
+                class="input input-align-left select-modal-filter-input"
+                data-testid="select-modal-filter-input"
+                placeholder="Search"
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="icon-button modal-header-close-button"
+          >
+            <div
+              class="icon-button-content"
+            >
+              <div
+                class="icon-button-icon"
+              >
+                <svg>
+                  Cross16Icon.svg
+                </svg>
+              </div>
+              <div
+                class="icon-button-text"
+              >
+                Close
+              </div>
+            </div>
+          </button>
+        </header>
+        <section
+          class="modal-content"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="select-option"
+            >
+              <div
+                class="select-option-icon"
+              >
+                <div
+                  data-testid="test1-icon"
+                >
+                  Test1 icon element
+                </div>
+              </div>
+              <div
+                class="select-option-content"
+              >
+                <div
+                  class="select-option-content-data"
+                >
+                  <div>
+                    Balance:
+                     
+                    $5,676.56
+                  </div>
+                </div>
+                <div
+                  class="select-option-content-description"
+                >
+                  <div
+                    class="caption"
+                  >
+                    USD
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="select-option"
+            >
+              <div
+                class="select-option-icon"
+              >
+                <div
+                  data-testid="test2-icon"
+                >
+                  Test2 icon element
+                </div>
+              </div>
+              <div
+                class="select-option-content"
+              >
+                <div
+                  class="select-option-content-data"
+                >
+                  <div>
+                    Balance:
+                     
+                    €1,276.76
+                  </div>
+                </div>
+                <div
+                  class="select-option-content-description"
+                >
+                  <div
+                    class="caption"
+                  >
+                    EUR
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <input
+      class="input input-align-right"
+      value="-4,565.46"
+    />
+  </div>
+  <div
+    class="currency-input-info"
+  >
+    <div
+      class="currency-input-balance"
+    >
+      Balance:
+       
+      $1,655.67
+    </div>
+    <div
+      class="currency-input-error"
+    >
+      balance exceed
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders CurrencyInput noerror in 1`] = `
+<div
+  class="currency-input"
+  data-testid="test-currency-input"
+>
+  <div
+    class="currency-input-controls"
+  >
+    <div
+      data-testid="select-test"
+    >
+      <button
+        class="icon-button icon-right"
+        data-testid="select-buton"
+      >
+        <div
+          class="icon-button-content"
+        >
+          <div
+            class="icon-button-icon"
+          >
+            <svg>
+              Down16Icon.svg
+            </svg>
+          </div>
+          <div
+            class="icon-button-text"
+          >
+            <div>
+              Balance:
+               
+              $5,676.56
+            </div>
+          </div>
+        </div>
+      </button>
+      <div
+        class="modal-overlay modal-overlay-hide"
+      />
+      <div
+        class="modal"
+        data-testid="select-modal"
+      >
+        <header
+          class="modal-header"
+        >
+          <div
+            class="modal-header-content"
+          >
+            <div
+              class="caption"
+            >
+              <input
+                class="input input-align-left select-modal-filter-input"
+                data-testid="select-modal-filter-input"
+                placeholder="Search"
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="icon-button modal-header-close-button"
+          >
+            <div
+              class="icon-button-content"
+            >
+              <div
+                class="icon-button-icon"
+              >
+                <svg>
+                  Cross16Icon.svg
+                </svg>
+              </div>
+              <div
+                class="icon-button-text"
+              >
+                Close
+              </div>
+            </div>
+          </button>
+        </header>
+        <section
+          class="modal-content"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="select-option"
+            >
+              <div
+                class="select-option-icon"
+              >
+                <div
+                  data-testid="test1-icon"
+                >
+                  Test1 icon element
+                </div>
+              </div>
+              <div
+                class="select-option-content"
+              >
+                <div
+                  class="select-option-content-data"
+                >
+                  <div>
+                    Balance:
+                     
+                    $5,676.56
+                  </div>
+                </div>
+                <div
+                  class="select-option-content-description"
+                >
+                  <div
+                    class="caption"
+                  >
+                    USD
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="select-option"
+            >
+              <div
+                class="select-option-icon"
+              >
+                <div
+                  data-testid="test2-icon"
+                >
+                  Test2 icon element
+                </div>
+              </div>
+              <div
+                class="select-option-content"
+              >
+                <div
+                  class="select-option-content-data"
+                >
+                  <div>
+                    Balance:
+                     
+                    €1,276.76
+                  </div>
+                </div>
+                <div
+                  class="select-option-content-description"
+                >
+                  <div
+                    class="caption"
+                  >
+                    EUR
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <input
+      class="input input-align-right"
+      value="665.76"
+    />
+  </div>
+  <div
+    class="currency-input-info"
+  >
+    <div
+      class="currency-input-balance"
+    >
+      Balance:
+       
+      $6,655.67
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders CurrencyInput noerror out 1`] = `
+<div
+  class="currency-input"
+  data-testid="test-currency-input"
+>
+  <div
+    class="currency-input-controls"
+  >
+    <div
+      data-testid="select-test"
+    >
+      <button
+        class="icon-button icon-right"
+        data-testid="select-buton"
+      >
+        <div
+          class="icon-button-content"
+        >
+          <div
+            class="icon-button-icon"
+          >
+            <svg>
+              Down16Icon.svg
+            </svg>
+          </div>
+          <div
+            class="icon-button-text"
+          >
+            <div>
+              Balance:
+               
+              $5,676.56
+            </div>
+          </div>
+        </div>
+      </button>
+      <div
+        class="modal-overlay modal-overlay-hide"
+      />
+      <div
+        class="modal"
+        data-testid="select-modal"
+      >
+        <header
+          class="modal-header"
+        >
+          <div
+            class="modal-header-content"
+          >
+            <div
+              class="caption"
+            >
+              <input
+                class="input input-align-left select-modal-filter-input"
+                data-testid="select-modal-filter-input"
+                placeholder="Search"
+                value=""
+              />
+            </div>
+          </div>
+          <button
+            class="icon-button modal-header-close-button"
+          >
+            <div
+              class="icon-button-content"
+            >
+              <div
+                class="icon-button-icon"
+              >
+                <svg>
+                  Cross16Icon.svg
+                </svg>
+              </div>
+              <div
+                class="icon-button-text"
+              >
+                Close
+              </div>
+            </div>
+          </button>
+        </header>
+        <section
+          class="modal-content"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="select-option"
+            >
+              <div
+                class="select-option-icon"
+              >
+                <div
+                  data-testid="test1-icon"
+                >
+                  Test1 icon element
+                </div>
+              </div>
+              <div
+                class="select-option-content"
+              >
+                <div
+                  class="select-option-content-data"
+                >
+                  <div>
+                    Balance:
+                     
+                    $5,676.56
+                  </div>
+                </div>
+                <div
+                  class="select-option-content-description"
+                >
+                  <div
+                    class="caption"
+                  >
+                    USD
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="select-option"
+            >
+              <div
+                class="select-option-icon"
+              >
+                <div
+                  data-testid="test2-icon"
+                >
+                  Test2 icon element
+                </div>
+              </div>
+              <div
+                class="select-option-content"
+              >
+                <div
+                  class="select-option-content-data"
+                >
+                  <div>
+                    Balance:
+                     
+                    €1,276.76
+                  </div>
+                </div>
+                <div
+                  class="select-option-content-description"
+                >
+                  <div
+                    class="caption"
+                  >
+                    EUR
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <input
+      class="input input-align-right"
+      value="-65.46"
+    />
+  </div>
+  <div
+    class="currency-input-info"
+  >
+    <div
+      class="currency-input-balance"
+    >
+      Balance:
+       
+      $1,655.67
+    </div>
+  </div>
+</div>
+`;

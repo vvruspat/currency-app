@@ -1,15 +1,23 @@
 import { ReactComponent as Chart16Icon } from "./assets/Chart16Icon.svg";
 import "./ExchangeRate.css";
 
-type ExchangeRateProps = {
+type ExchangeRateProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
   from: string;
   to: string;
   rate: number;
 };
 
-export const ExchangeRate = ({ from, to, rate }: ExchangeRateProps) => {
+export const ExchangeRate = ({
+  from,
+  to,
+  rate,
+  ...divProps
+}: ExchangeRateProps) => {
   return (
-    <div className="exchange-rate">
+    <div className="exchange-rate" {...divProps}>
       <Chart16Icon className="exchange-rate-chart-icon" />
       {new Intl.NumberFormat("en-US", {
         style: "currency",
