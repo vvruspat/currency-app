@@ -164,6 +164,7 @@ export const CurrencyInput = ({
           onKeyDown={onAmounKeyDown}
           ref={amountInputRef}
           autoFocus={false}
+          inputMode="decimal"
         />
       </div>
       <div className="currency-input-info">

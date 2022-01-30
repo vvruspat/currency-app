@@ -4,8 +4,6 @@ import { Exchange } from "./components/Exchange/Exchange";
 
 import "./App.css";
 
-// TODO: Add support type="number" for input
-
 const App = () => {
   const { ErrorBoundary, didCatch, error } = useErrorBoundary();
 
