@@ -32,4 +32,4 @@ Your app is ready to be deployed!
 
 ### `npm run deploy`
 
-Deploy app to github
+Deploy app to github using gh-pages
