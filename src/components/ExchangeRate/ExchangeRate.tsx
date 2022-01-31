@@ -19,17 +19,19 @@ export const ExchangeRate = ({
   return (
     <div className="exchange-rate" {...divProps}>
       <Chart16Icon className="exchange-rate-chart-icon" />
-      {new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: from,
-      }).format(1)}{" "}
-      ={" "}
-      {new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: to,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 5,
-      }).format(rate)}
+      <div className="exchange-rate-data">
+        {new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: from,
+        }).format(1)}{" "}
+        ={" "}
+        {new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: to,
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 5,
+        }).format(rate)}
+      </div>
     </div>
   );
 };

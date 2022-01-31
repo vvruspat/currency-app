@@ -13,6 +13,7 @@
 
   --hairline-color: #f0f9fa;
   --form-background: #ffffff;
+  --skeleton-color: #eeeeee;
 
   --padding: 8px;
   --padding-form-item: 8px 16px;
@@ -39,29 +40,41 @@
   height: 100%;
 }
 
-.skeleton::before {
+.skeleton {
+  background: var(--skeleton-color);
+}
+
+.skeleton:before {
   content: "";
   display: block;
-  position: absolute;
-  left: -150px;
-  top: 0;
+
   height: 100%;
-  width: 150px;
+  width: 100%;
+
   background: linear-gradient(
-    to right,
-    transparent 0%,
-    var(--hairline-color) 50%,
-    transparent 100%
-  );
-  animation: skeleton 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      0.25turn,
+      transparent,
+      var(--form-background),
+      transparent
+    ),
+    linear-gradient(var(--skeleton-color), var(--skeleton-color)),
+    radial-gradient(
+      38px circle at 19px 19px,
+      var(--skeleton-color) 50%,
+      transparent 51%
+    ),
+    linear-gradient(var(--skeleton-color), var(--skeleton-color));
+
+  background-repeat: no-repeat;
+  background-size: 315px 250px, 315px 180px, 100px 100px, 225px 30px;
+  background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
+
+  animation: skeleton 1s cubic-bezier(0.4, 0, 0.2, 1) alternate infinite;
 }
 
 @keyframes skeleton {
-  from {
-    left: -150px;
-  }
   to {
-    left: 100%;
+    background-position: 100% 0, 0 0, 0 190px, 50px 195px;
   }
 }
 

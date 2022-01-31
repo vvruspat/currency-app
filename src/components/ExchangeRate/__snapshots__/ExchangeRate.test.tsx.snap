@@ -10,11 +10,15 @@ exports[`renders Exchange EUR -> USD 1`] = `
   >
     Chart16Icon.svg
   </svg>
-  €1.00
-   
-  =
-   
-  $1.98568
+  <div
+    class="exchange-rate-data"
+  >
+    €1.00
+     
+    =
+     
+    $1.98568
+  </div>
 </div>
 `;
 
@@ -28,10 +32,14 @@ exports[`renders Exchange USD -> EUR 1`] = `
   >
     Chart16Icon.svg
   </svg>
-  $1.00
-   
-  =
-   
-  €0.98568
+  <div
+    class="exchange-rate-data"
+  >
+    $1.00
+     
+    =
+     
+    €0.98568
+  </div>
 </div>
 `;

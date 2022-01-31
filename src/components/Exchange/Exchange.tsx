@@ -25,6 +25,7 @@ import { FetchingState } from "../../types/enums";
 import { MODALS, ModalsContext } from "../Modals/Modals";
 import { useExchange } from "../../hooks/useExchange";
 import { SuccessModal } from "../SuccessModal/SuccessModal";
+import { ExchangeRateSkeleton } from "../ExchangeRate";
 
 type ExchangeProps = {} & DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
@@ -99,9 +100,13 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
     if (currencyFrom && currencyTo) {
       fetchExchange(currencyFrom?.key, currencyTo?.key);
 
+      // Api server updates currencies each 15 minutes,
+      // thats why I think we dont need to make a request every 10 seconds,
+      // because in this case we will exceed requests limits to fast.
+      // I set timer to 20 sec update interval, it's enought for this task
       timerInterval.current = window.setInterval(() => {
         fetchExchange(currencyFrom?.key, currencyTo?.key);
-      }, 10000);
+      }, 20000);
     }
 
     return () => {
@@ -198,16 +203,21 @@ export const Exchange = ({ className, ...divProps }: ExchangeProps) => {
                 ? `Sell ${currencyFrom?.key ?? ""}`
                 : `Buy  ${currencyFrom?.key ?? ""}`}
             </Title>
-            {!exchangeError && currencyFrom && currencyTo && exchangeRate && (
-              <ExchangeRate
-                from={currencyFrom?.key}
-                to={currencyTo?.key}
-                rate={exchangeRate}
-              />
-            )}
-            {(!!exchangeError || !!accountsError) && (
+            {!exchangeError && !accountsError ? (
+              <>
+                {currencyFrom && currencyTo && exchangeRate ? (
+                  <ExchangeRate
+                    from={currencyFrom?.key}
+                    to={currencyTo?.key}
+                    rate={exchangeRate}
+                  />
+                ) : (
+                  <ExchangeRateSkeleton />
+                )}
+              </>
+            ) : (
               <Caption className="currency-exchange-error">
-                Error: Operation unavailable.
+                API Error: Operation unavailable.
               </Caption>
             )}
             <div className={cn(className, "currency-exchange-inputs")}>

@@ -1,4 +1,7 @@
 .exchange-rate {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
   margin: var(--margin-big) 0;
   color: var(--link-color);
   font-weight: 600;
@@ -6,4 +9,9 @@
 
 .exchange-rate-chart-icon {
   margin-right: var(--margin);
+  width: 16px;
+}
+
+.exchange-rate-data {
+  flex: 1;
 }
