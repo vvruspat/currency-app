@@ -40,7 +40,7 @@ test("should change state to error", () => {
   ).toEqual({
     exchange: null,
     status: FetchingState.FAILED,
-    error: new Error("Internal server error"),
+    error: "Internal server error",
   });
 });
 

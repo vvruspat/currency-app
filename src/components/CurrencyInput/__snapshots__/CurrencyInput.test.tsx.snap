@@ -73,11 +73,6 @@ exports[`renders CurrencyInput error out 1`] = `
                   Cross16Icon.svg
                 </svg>
               </div>
-              <div
-                class="icon-button-text"
-              >
-                Close
-              </div>
             </div>
           </button>
         </header>
@@ -260,11 +255,6 @@ exports[`renders CurrencyInput noerror in 1`] = `
                   Cross16Icon.svg
                 </svg>
               </div>
-              <div
-                class="icon-button-text"
-              >
-                Close
-              </div>
             </div>
           </button>
         </header>
@@ -441,11 +431,6 @@ exports[`renders CurrencyInput noerror out 1`] = `
                 <svg>
                   Cross16Icon.svg
                 </svg>
-              </div>
-              <div
-                class="icon-button-text"
-              >
-                Close
               </div>
             </div>
           </button>

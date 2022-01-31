@@ -62,11 +62,6 @@ exports[`renders select 1`] = `
               Cross16Icon.svg
             </svg>
           </div>
-          <div
-            class="icon-button-text"
-          >
-            Close
-          </div>
         </div>
       </button>
     </header>
@@ -268,11 +263,6 @@ exports[`renders select 2`] = `
               Cross16Icon.svg
             </svg>
           </div>
-          <div
-            class="icon-button-text"
-          >
-            Close
-          </div>
         </div>
       </button>
     </header>
@@ -473,11 +463,6 @@ exports[`renders select 3`] = `
             <svg>
               Cross16Icon.svg
             </svg>
-          </div>
-          <div
-            class="icon-button-text"
-          >
-            Close
           </div>
         </div>
       </button>

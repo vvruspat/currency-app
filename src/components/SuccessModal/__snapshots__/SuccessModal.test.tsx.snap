@@ -34,11 +34,6 @@ exports[`renders Exchange USD -> EUR 1`] = `
             Cross16Icon.svg
           </svg>
         </div>
-        <div
-          class="icon-button-text"
-        >
-          Close
-        </div>
       </div>
     </button>
   </header>

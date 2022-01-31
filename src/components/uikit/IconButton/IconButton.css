@@ -40,4 +40,5 @@
 .icon-button-text {
   padding: 0 var(--padding);
   font-weight: 600;
+  color: var(--primary-text-color);
 }

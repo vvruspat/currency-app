@@ -5,7 +5,7 @@ import { FetchingState } from "../../types/enums";
 export type AccountsReducer = {
   accounts: Account[];
   status: FetchingState;
-  error: Error | null;
+  error: string | null;
 };
 
 const initialState: AccountsReducer = {
@@ -27,7 +27,7 @@ const accountsSlice = createSlice({
     },
     accountsFailed(state, action: PayloadAction<string>) {
       state.status = FetchingState.FAILED;
-      state.error = new Error(action.payload);
+      state.error = action.payload;
     },
   },
 });

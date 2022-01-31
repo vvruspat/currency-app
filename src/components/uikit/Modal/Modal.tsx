@@ -75,9 +75,7 @@ export const Modal = ({
               className="modal-header-close-button"
               onClick={() => close()}
               icon={<Cross16Icon />}
-            >
-              Close
-            </IconButton>
+            ></IconButton>
           </header>
         )}
         <section className="modal-content">{children}</section>

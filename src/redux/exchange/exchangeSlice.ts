@@ -4,7 +4,7 @@ import { FetchingState } from "../../types/enums";
 export type ExchangeReducer = {
   exchange: number | null;
   status: FetchingState;
-  error: Error | null;
+  error: string | null;
 };
 
 const initialState: ExchangeReducer = {
@@ -26,7 +26,7 @@ const exchangeSlice = createSlice({
     },
     exchangeFailed(state, action: PayloadAction<string>) {
       state.status = FetchingState.FAILED;
-      state.error = new Error(action.payload);
+      state.error = action.payload;
     },
   },
 });
