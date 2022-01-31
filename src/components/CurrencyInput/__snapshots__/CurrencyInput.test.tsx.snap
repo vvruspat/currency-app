@@ -162,7 +162,9 @@ exports[`renders CurrencyInput error out 1`] = `
       </div>
     </div>
     <input
-      class="input input-align-right"
+      class="amount-input"
+      inputmode="decimal"
+      type="text"
       value="-4,565.46"
     />
   </div>
@@ -347,7 +349,9 @@ exports[`renders CurrencyInput noerror in 1`] = `
       </div>
     </div>
     <input
-      class="input input-align-right"
+      class="amount-input"
+      inputmode="decimal"
+      type="text"
       value="665.76"
     />
   </div>
@@ -527,7 +531,9 @@ exports[`renders CurrencyInput noerror out 1`] = `
       </div>
     </div>
     <input
-      class="input input-align-right"
+      class="amount-input"
+      inputmode="decimal"
+      type="text"
       value="-65.46"
     />
   </div>

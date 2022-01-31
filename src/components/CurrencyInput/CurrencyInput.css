@@ -29,3 +29,17 @@
   text-align: right;
   color: var(--danger-color);
 }
+
+.amount-input {
+  border: 0 none;
+  background: var(--form-background);
+  padding: var(--padding-form-item);
+  border-radius: var(--radius);
+  font-size: var(--text-font-size);
+  font-weight: 600;
+  text-align: right;
+}
+
+.amount-input:focus {
+  outline: none;
+}

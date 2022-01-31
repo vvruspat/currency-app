@@ -2,19 +2,16 @@ import {
   ChangeEvent,
   useCallback,
   useState,
-  KeyboardEvent,
-  useRef,
   useEffect,
   DetailedHTMLProps,
   HTMLAttributes,
 } from "react";
+import NumberFormat from "react-number-format";
 import { Balance } from "../Balance/Balance";
 import { BalanceSkeleton } from "../Balance/BalanceSkeleton";
 import { MODALS } from "../Modals/Modals";
-import { Input } from "../uikit";
 import { Select, SelectorOption } from "../uikit/Select";
 import "./CurrencyInput.css";
-import { usePreviousFormatedAmount } from "./utils/usePreviousFormatedAmount";
 
 export enum CurrencyDirection {
   IN = "in",
@@ -49,10 +46,6 @@ export const CurrencyInput = ({
   const [currency, setCurrency] = useState<SelectorOption>(
     options[0] ?? undefined
   );
-  const [formatedAmount, setFormatedAmount] = useState("0.00");
-  const prevFormatedAmount = usePreviousFormatedAmount(formatedAmount);
-  const [caretePosition, setCaretePosition] = useState(0);
-  const amountInputRef = useRef<HTMLInputElement>(null);
 
   const onAmountChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -70,83 +63,9 @@ export const CurrencyInput = ({
     [onCurrencyAmountChange]
   );
 
-  const onAmounKeyDown = useCallback(
-    (e: KeyboardEvent<HTMLInputElement>) => {
-      // We need this conditions to control the caret position in Desktop & to avoid point deletion on every platforms
-      if (
-        e.key === "Backspace" &&
-        amountInputRef.current?.selectionStart ===
-          formatedAmount.indexOf(".") + 1
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        amountInputRef.current.selectionStart--;
-        amountInputRef.current.selectionEnd =
-          amountInputRef.current.selectionStart;
-      } else if (
-        e.key === "Delete" &&
-        amountInputRef.current?.selectionStart ===
-          formatedAmount.indexOf(".") - 1
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        amountInputRef.current.selectionStart++;
-        amountInputRef.current.selectionEnd =
-          amountInputRef.current.selectionStart;
-      } else if (e.key === "ArrowRight" && amountInputRef.current) {
-        e.preventDefault();
-        e.stopPropagation();
-        amountInputRef.current.selectionStart =
-          (amountInputRef.current.selectionStart ?? 0) + 1;
-        amountInputRef.current.selectionEnd =
-          amountInputRef.current.selectionStart;
-      } else if (e.key === "ArrowLeft" && amountInputRef.current) {
-        e.preventDefault();
-        e.stopPropagation();
-        amountInputRef.current.selectionStart =
-          (amountInputRef.current.selectionStart ?? 1) - 1;
-        amountInputRef.current.selectionEnd =
-          amountInputRef.current.selectionStart;
-      } else {
-        if (amountInputRef.current) {
-          setCaretePosition(amountInputRef.current.selectionStart || 0);
-        }
-      }
-    },
-    [formatedAmount]
-  );
-
   useEffect(() => {
     onCurrencyChange(currency);
   }, [currency, onCurrencyChange]);
-
-  // Formating amount to currency view
-  useEffect(() => {
-    let amountFormated = new Intl.NumberFormat("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(
-      amount ? (direction === CurrencyDirection.IN ? +amount : -amount) : 0
-    );
-
-    setFormatedAmount(amountFormated);
-  }, [amount, direction]);
-
-  // If input has been focused, this code calculates carete shift
-  useEffect(() => {
-    if (
-      amountInputRef.current &&
-      amountInputRef.current === document.activeElement
-    ) {
-      const newCaretePosition =
-        caretePosition +
-        (formatedAmount.length -
-          (prevFormatedAmount?.length ?? formatedAmount.length));
-
-      amountInputRef.current.selectionStart = newCaretePosition;
-      amountInputRef.current.selectionEnd = newCaretePosition;
-    }
-  }, [caretePosition, formatedAmount.length, prevFormatedAmount]);
 
   return (
     <div className="currency-input" {...divProps}>
@@ -157,14 +76,16 @@ export const CurrencyInput = ({
           onChoose={(v) => setCurrency(v)}
           modalNav={modalNav}
         />
-        <Input
-          value={formatedAmount}
-          align="right"
+        <NumberFormat
+          className="amount-input"
+          value={direction === CurrencyDirection.OUT ? -amount : amount}
           onChange={onAmountChange}
-          onKeyDown={onAmounKeyDown}
-          ref={amountInputRef}
-          autoFocus={false}
           inputMode="decimal"
+          autoFocus={false}
+          thousandSeparator={true}
+          thousandsGroupStyle="thousand"
+          decimalScale={2}
+          fixedDecimalScale={true}
         />
       </div>
       <div className="currency-input-info">
